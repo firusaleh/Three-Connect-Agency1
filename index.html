@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Three Connect Agency - Ihre Experten für B2B-Vertrieb, SDR-Coldcalling und CRM-Einrichtung">
+    <title>Three Connect Agency | B2B Sales & Marketing Expertise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f0f0f;
+            --secondary-color: #171717;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --text-color: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+            --easing: cubic-bezier(0.19, 1, 0.22, 1);
+            --transition-fast: all 0.3s var(--easing);
+            --transition-medium: all 0.5s var(--easing);
+            --transition-slow: all 0.8s var(--easing);
+        }* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 62.5%; /* 10px = 1rem */
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 1.6rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: var(--transition-fast);
+        }
+        
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 1.5rem 3rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1.6rem;
+            transition: var(--transition-fast);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+        
+        .btn-icon {
+            margin-left: 1rem;
+            font-size: 1.4rem;
+        }.section {
+            padding: 12rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            font-size: 4.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 6rem;
+            height: 0.4rem;
+            background-color: var(--accent-color);
+        }
+        
+        .section-subtitle {
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-bottom: 6rem;
+            max-width: 800px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2.5rem 0;
+            transition: var(--transition-fast);
+        }
+        
+        header.scrolled {
+            background-color: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-color);
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 4rem;
+        }
+        
+        nav ul li a {
+            font-size: 1.6rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0.2rem;
+            background-color: var(--accent-color);
+            transition: var(--transition-fast);
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-btn {
+            margin-left: 4rem;
+        }
+        
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .burger div {
+            width: 2.5rem;
+            height: 0.3rem;
+            background-color: var(--text-color);
+            margin: 0.5rem;
+            transition: var(--transition-fast);
+        }/* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.7));
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--easing) forwards 0.2s;
+        }
+        
+        .hero-title {
+            font-size: 7.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--easing) forwards 0.4s;
+        }
+        
+        .hero-title span {
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-description {
+            font-size: 2rem;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--easing) forwards 0.6s;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--easing) forwards 0.8s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }/* Services Section */
+        .services {
+            background-color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .services-decor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(52, 152, 219, 0.05), transparent);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+            z-index: 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card {
+            background-color: rgba(25, 25, 25, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 4rem;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), transparent);
+            opacity: 0;
+            transition: var(--transition-medium);
+            z-index: -1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-1rem);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            font-size: 4.8rem;
+            color: var(--accent-color);
+            margin-bottom: 2.5rem;
+        }
+        
+        .service-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-description {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.6rem;
+        }
+        
+        .service-link i {
+            margin-left: 1rem;
+            transition: var(--transition-fast);
+        }
+        
+        .service-link:hover {
+            color: var(--accent-hover);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }/* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .about-images {
+            position: relative;
+        }
+        
+        .about-img-main {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-img-floating {
+            position: absolute;
+            bottom: -5rem;
+            right: -5rem;
+            width: 60%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 0.5rem solid var(--primary-color);
+        }
+        
+        .about-content {
+            position: relative;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .about-stat {
+            text-align: center;
+            background-color: rgba(25, 25, 25, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: var(--transition-fast);
+        }
+        
+        .about-stat:hover {
+            transform: translateY(-0.5rem);
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+        
+        .about-stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-stat-text {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+        }/* Process Section */
+        .process {
+            background-color: var(--secondary-color);
+            position: relative;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+        }
+        
+        .process-step {
+            background-color: rgba(25, 25, 25, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 4rem;
+            transition: var(--transition-medium);
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-1rem);
+            border-color: rgba(52, 152, 219, 0.3);
+        }
+        
+        .process-step-number {
+            position: absolute;
+            top: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-step-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+        
+        .process-step-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .process-step-description {
+            color: var(--text-muted);
+        }/* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-medium);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.5));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-category {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }/* Testimonials Section */
+        .testimonials {
+            background-color: var(--secondary-color);
+        }
+        
+        .testimonial-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background-color: rgba(25, 25, 25, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 4rem;
+            text-align: center;
+            transition: var(--transition-fast);
+        }
+        
+        .testimonial-quote {
+            font-size: 2.4rem;
+            font-style: italic;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 6rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-quote::before {
+            top: -2rem;
+            left: -1rem;
+        }
+        
+        .testimonial-quote::after {
+            bottom: -6rem;
+            right: -1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .testimonial-author-img {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 0.3rem solid var(--accent-color);
+        }
+        
+        .testimonial-author-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-author-position {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+        }/* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        
+        .contact-icon {
+            font-size: 2.4rem;
+            color: var(--accent-color);
+        }
+        
+        .contact-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-text p {
+            color: var(--text-muted);
+        }
+        
+        .contact-form {
+            background-color: rgba(25, 25, 25, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 4rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            background-color: rgba(15, 15, 15, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            transition: var(--transition-fast);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        
+        .form-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0a0a0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.5rem center;
+            background-size: 2rem;
+        }
+        
+        .form-textarea {
+            min-height: 15rem;
+            resize: vertical;
+        }/* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            padding: 8rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 4rem;
+            height: 0.3rem;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-about p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 1rem;
+            transition: var(--transition-fast);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 0.5rem;
+        }
+        
+        .footer-links a:hover i {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: rgba(15, 15, 15, 0.5);
+            border-radius: 50%;
+            color: var(--text-color);
+            font-size: 1.8rem;
+            transition: var(--transition-fast);
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 1.4rem;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(3rem);
+            transition: opacity 1s var(--easing), transform 1s var(--easing);
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .staggered-fade-in {
+            opacity: 0;
+            transform: translateY(3rem);
+        }
+        
+        .staggered-fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s var(--easing), transform 1s var(--easing);
+        }/* Responsive */
+        @media (max-width: 1200px) {
+            html {
+                font-size: 56.25%; /* 9px = 1rem */
+            }
+            
+            .hero-title {
+                font-size: 6rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            html {
+                font-size: 50%; /* 8px = 1rem */
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-images {
+                order: 2;
+            }
+            
+            .about-content {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 0;
+            }
+            
+            .nav-btn {
+                display: none;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition-fast);
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                right: 0;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav ul li {
+                margin-left: 0;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .burger.active div:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+            
+            .burger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .burger.active div:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+            
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .hero-title {
+                font-size: 4.8rem;
+            }
+            
+            .hero-description {
+                margin: 0 auto 4rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 3.6rem;
+            }
+            
+            .section-title {
+                font-size: 3.6rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+            
+            .about-stat-number {
+                font-size: 3rem;
+            }
+            
+            .process-steps,
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head><body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Three <span>Connect</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#about">Über Uns</a></li>
+                    <li><a href="#process">Unser Prozess</a></li>
+                    <li><a href="#portfolio">Referenzen</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <a href="#contact" class="btn nav-btn">Anfrage starten</a>
+                <div class="burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <!-- Placeholder für Video-Hintergrund -->
+            <img src="/api/placeholder/1920/1080" alt="Hero Background" class="hero-video">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">B2B Vertriebsexperten</p>
+                <h1 class="hero-title">Steigern Sie Ihre <span class="typed-text">Conversion</span></h1>
+                <p class="hero-description">Wir helfen Ihnen dabei, Ihre Sales-Prozesse zu optimieren und mehr qualifizierte Leads für Ihr Geschäftswachstum zu generieren.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Beratungsgespräch vereinbaren <i class="fas fa-arrow-right btn-icon"></i></a>
+                    <a href="#services" class="btn btn-outline">Unsere Leistungen <i class="fas fa-arrow-right btn-icon"></i></a>
+                </div>
+            </div>
+        </div>
+    </section><!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="services-decor"></div>
+        <div class="container">
+            <h2 class="section-title fade-in">Unsere Leistungen</h2>
+            <p class="section-subtitle fade-in">Wir bieten maßgeschneiderte Lösungen, um Ihren B2B-Vertrieb auf die nächste Stufe zu heben und nachhaltiges Wachstum zu erzielen.</p>
+            <div class="services-grid">
+                <div class="service-card staggered-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Website-Erstellung</h3>
+                    <p class="service-description">Wir konzipieren und entwickeln hochwertige, konversionsoptimierte Websites, die Ihr Unternehmen im besten Licht präsentieren und Ihre Vertriebsziele unterstützen.</p>
+                    <a href="#contact" class="service-link">Mehr erfahren <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card staggered-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title">SEO-Optimierung</h3>
+                    <p class="service-description">Mit unserer datengetriebenen SEO-Strategie verbessern wir Ihre Sichtbarkeit in Suchmaschinen und steigern Ihren organischen Traffic für nachhaltiges Wachstum.</p>
+                    <a href="#contact" class="service-link">Mehr erfahren <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card staggered-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="service-title">SDR-Coldcalling</h3>
+                    <p class="service-description">Unsere erfahrenen Sales Development Representatives führen qualifizierte Gespräche mit Ihren potenziellen Kunden und generieren hochwertige Termine für Ihren Vertrieb.</p>
+                    <a href="#contact" class="service-link">Mehr erfahren <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card staggered-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">CRM-Einrichtung</h3>
+                    <p class="service-description">Wir implementieren und optimieren Ihr CRM-System für effizientere Vertriebsprozesse, bessere Kundenverwaltung und datenbasierte Entscheidungen.</p>
+                    <a href="#contact" class="service-link">Mehr erfahren <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section><!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img-main">
+                        <img src="/api/placeholder/600/400" alt="Three Connect Team" />
+                    </div>
+                    <div class="about-img-floating">
+                        <img src="/api/placeholder/350/250" alt="Three Connect Office" />
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title fade-in">Über Three Connect</h2>
+                    <p class="fade-in">Wir sind ein Team von Vertriebs- und Marketing-Experten mit jahrelanger Erfahrung im B2B-Bereich. Unsere Mission ist es, Unternehmen dabei zu helfen, ihre Vertriebsprozesse zu optimieren und nachhaltiges Wachstum zu erzielen.</p>
+                    <p class="fade-in">Mit unserer Kombination aus technischem Know-how, strategischem Denken und praktischer Umsetzungskompetenz bieten wir maßgeschneiderte Lösungen, die genau zu Ihren Anforderungen passen.</p>
+                    <div class="about-stats">
+                        <div class="about-stat fade-in">
+                            <div class="about-stat-number" data-count="200">0</div>
+                            <div class="about-stat-text">Zufriedene Kunden</div>
+                        </div>
+                        <div class="about-stat fade-in">
+                            <div class="about-stat-number" data-count="5000">0</div>
+                            <div class="about-stat-text">Generierte Leads</div>
+                        </div>
+                        <div class="about-stat fade-in">
+                            <div class="about-stat-number" data-count="98">0</div>
+                            <div class="about-stat-text">Kundenzufriedenheit %</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Process Section -->
+    <section class="section process" id="process">
+        <div class="container">
+            <h2 class="section-title fade-in">Unser Prozess</h2>
+            <p class="section-subtitle fade-in">Ein systematischer Ansatz für Ihren Erfolg. Wir arbeiten transparent und zielorientiert, um Ihnen maximale Ergebnisse zu liefern.</p>
+            <div class="process-steps">
+                <div class="process-step staggered-fade-in">
+                    <div class="process-step-number">1</div>
+                    <div class="process-step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="process-step-title">Analyse</h3>
+                    <p class="process-step-description">Wir analysieren Ihre aktuelle Vertriebssituation, identifizieren Optimierungspotenziale und definieren messbare Ziele.</p>
+                </div>
+                <div class="process-step staggered-fade-in">
+                    <div class="process-step-number">2</div>
+                    <div class="process-step-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="process-step-title">Strategie</h3>
+                    <p class="process-step-description">Gemeinsam entwickeln wir eine maßgeschneiderte Strategie, die zu Ihren Zielen und Ihrer Zielgruppe passt.</p>
+                </div>
+                <div class="process-step staggered-fade-in">
+                    <div class="process-step-number">3</div>
+                    <div class="process-step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="process-step-title">Umsetzung</h3>
+                    <p class="process-step-description">Unser erfahrenes Team setzt die Strategie professionell um und generiert qualifizierte Leads für Ihren Vertrieb.</p>
+                </div>
+                <div class="process-step staggered-fade-in">
+                    <div class="process-step-number">4</div>
+                    <div class="process-step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="process-step-title">Optimierung</h3>
+                    <p class="process-step-description">Kontinuierliche Analyse und Optimierung unserer Maßnahmen für maximalen ROI und nachhaltigen Erfolg.</p>
+                </div>
+            </div>
+        </div>
+    </section><!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Unsere Erfolge</h2>
+            <p class="section-subtitle fade-in">Entdecken Sie einige unserer Erfolgsgeschichten und erfahren Sie, wie wir Unternehmen zu nachhaltigem Wachstum verholfen haben.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="/api/placeholder/600/400" alt="Projekt 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">TechSolutions GmbH</h3>
+                        <p class="portfolio-category">SDR-Coldcalling & CRM-Implementierung</p>
+                        <a href="#contact" class="btn btn-outline">Case Study anfragen</a>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="/api/placeholder/600/400" alt="Projekt 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">InnovateX</h3>
+                        <p class="portfolio-category">Website-Relaunch & SEO-Optimierung</p>
+                        <a href="#contact" class="btn btn-outline">Case Study anfragen</a>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="/api/placeholder/600/400" alt="Projekt 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">GrowthPartners AG</h3>
+                        <p class="portfolio-category">Vertriebsstrategie & Lead-Generierung</p>
+                        <a href="#contact" class="btn btn-outline">Case Study anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">Kundenstimmen</h2>
+            <p class="section-subtitle fade-in">Was unsere Kunden über die Zusammenarbeit mit Three Connect sagen. Echte Erfahrungen, echte Resultate.</p>
+            <div class="testimonial-wrapper">
+                <div class="testimonial fade-in">
+                    <p class="testimonial-quote">Three Connect hat unseren B2B-Vertrieb revolutioniert. Innerhalb von drei Monaten konnten wir unsere Terminqualität deutlich steigern und unseren Umsatz um 30% erhöhen. Die Kombination aus strategischem Denken und praktischer Umsetzung ist beeindruckend.</p>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/200/200" alt="Michael Schmidt" class="testimonial-author-img">
+                        <h4 class="testimonial-author-name">Michael Schmidt</h4>
+                        <p class="testimonial-author-position">CEO, TechSolutions GmbH</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Kontaktieren Sie uns</h2>
+            <p class="section-subtitle fade-in">Haben Sie Fragen oder möchten Sie mehr über unsere Leistungen erfahren? Kontaktieren Sie uns für ein kostenloses Beratungsgespräch.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Adresse</h3>
+                            <p>Musterstraße 123<br>12345 Musterstadt<br>Deutschland</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Telefon</h3>
+                            <p>+49 123 456789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>E-Mail</h3>
+                            <p>kontakt@three-connect.de</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Geschäftszeiten</h3>
+                            <p>Mo - Fr: 9:00 - 18:00 Uhr<br>Sa - So: Geschlossen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ihr Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Ihre E-Mail *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Ihre Telefonnummer</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Unternehmen</label>
+                            <input type="text" id="company" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="service" class="form-label">Gewünschte Leistung *</label>
+                            <select id="service" class="form-control form-select" required>
+                                <option value="" selected disabled>Bitte auswählen</option>
+                                <option value="website">Website-Erstellung</option>
+                                <option value="seo">SEO-Optimierung</option>
+                                <option value="sdr">SDR-Coldcalling</option>
+                                <option value="crm">CRM-Einrichtung</option>
+                                <option value="other">Sonstiges</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Ihre Nachricht *</label>
+                            <textarea id="message" class="form-control form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Nachricht senden <i class="fas fa-paper-plane btn-icon"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section><!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>Three Connect Agency</h3>
+                    <p>Wir unterstützen Unternehmen dabei, ihre Vertriebsprozesse zu optimieren und mehr qualifizierte Leads zu generieren für nachhaltiges Wachstum und Erfolg.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Leistungen</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Website-Erstellung</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> SEO-Optimierung</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> SDR-Coldcalling</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> CRM-Einrichtung</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Über Uns</a></li>
+                        <li><a href="#process"><i class="fas fa-chevron-right"></i> Unser Prozess</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Referenzen</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Impressum</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Datenschutz</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Three Connect Agency. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('nav ul');
+        
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking// Close mobile menu when clicking on a nav link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Scroll Animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const staggeredElements = document.querySelectorAll('.staggered-fade-in');
+        
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+            
+            staggeredElements.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    setTimeout(() => {
+                        element.classList.add('active');
+                    }, index * 100);
+                }
+            });
+        }
+        
+        // Number Counter Animation
+        const statNumbers = document.querySelectorAll('.about-stat-number');
+        
+        function countUp() {
+            statNumbers.forEach(number => {
+                const target = parseInt(number.getAttribute('data-count'));
+                const count = parseInt(number.innerText);
+                const increment = target / 50;
+                
+                if (count < target) {
+                    number.innerText = Math.ceil(count + increment);
+                    setTimeout(countUp, 40);
+                } else {
+                    number.innerText = target;
+                }
+            });
+        }
+        
+        // Animated Typing Effect
+        const typedTextSpan = document.querySelector('.typed-text');
+        const texts = ['Conversion', 'Lead-Generierung', 'Vertriebsprozesse'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typedTextSpan.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextSpan.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typingSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // Pause at end of word
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500; // Pause before typing next word
+            }
+            
+            setTimeout(type, typingSpeed);
+        }
+        
+        // Add event listeners
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', () => {
+            checkFade();
+            setTimeout(type, 1000);
+            
+            // Init counter when About section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        countUp();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.5});
+            
+            const aboutSection = document.querySelector('#about');
+            observer.observe(aboutSection);
+        });
+    </script>
+</body>
+</html>
